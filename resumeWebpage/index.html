@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rishabh Sharma - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Mono', monospace;
+      background-color: #fafafa;
+      color: #141414;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      z-index: 50;
+      opacity: 0;
+      animation: reveal 1s ease forwards;
+    }
+
+    .header-left {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: #737373;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .status-text {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: #737373;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #e85d04;
+      border-radius: 50%;
+    }
+
+    /* Main */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 3rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    /* Name */
+    .name-section {
+      margin-bottom: 3rem;
+    }
+
+    .name-line {
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 12vw, 8rem);
+      font-weight: 700;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      opacity: 0;
+      transform: translateY(60px);
+      animation: reveal 1s ease forwards;
+    }
+
+    h1:first-child {
+      animation-delay: 0.2s;
+    }
+
+    h1.outline {
+      -webkit-text-stroke: 1.5px #141414;
+      -webkit-text-fill-color: transparent;
+      animation-delay: 0.3s;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background-color: #e0e0e0;
+      margin: 3rem 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: lineGrow 1.2s ease forwards 0.4s;
+    }
+
+    /* Bottom Section */
+    .bottom-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      opacity: 0;
+      animation: reveal 1s ease forwards 0.5s;
+    }
+
+    .info p {
+      font-size: 0.75rem;
+      color: #737373;
+      margin-bottom: 0.5rem;
+    }
+
+    .info h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .skills {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .skill-tag {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.75rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 50px;
+      cursor: default;
+      transition: all 0.3s ease;
+    }
+
+    .skill-tag:hover {
+      background-color: #141414;
+      color: #fafafa;
+      border-color: #141414;
+    }
+
+    /* Links */
+    .social-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .social-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: #737373;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #141414;
+    }
+
+    /* Footer */
+    footer {
+      padding-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+      animation: reveal 1s ease forwards 0.5s;
+    }
+
+    .scroll-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .scroll-indicator span {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: #737373;
+    }
+
+    .scroll-indicator div {
+      width: 1px;
+      height: 2rem;
+      background-color: #e0e0e0;
+    }
+
+    /* Animations */
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes lineGrow {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header, main {
+        padding: 1.5rem;
+      }
+
+      .bottom-section {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="header-left">PORTFOLIO © 2025</span>
+    <div class="header-right">
+      <span class="status-text">AVAILABLE FOR WORK</span>
+      <div class="status-dot"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="name-section">
+        <div class="name-line">
+          <h1>RISHABH</h1>
+        </div>
+        <div class="name-line">
+          <h1 class="outline">SHARMA</h1>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="bottom-section">
+        <div class="info">
+          <p>Based in India</p>
+          <h2>Developer & Creative</h2>
+          <div class="skills">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#">LINKEDIN</a>
+          <a href="#">GITHUB</a>
+          <a href="#">EMAIL</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="scroll-indicator">
+      <span>SCROLL</span>
+      <div></div>
+    </div>
+  </footer>
+</body>
+</html>
